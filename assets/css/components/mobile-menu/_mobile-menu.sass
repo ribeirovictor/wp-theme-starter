@@ -1,0 +1,68 @@
+
+$bg: $color-secondary-2
+$fg: $color-primary-1
+
+.mobile-menu
+  // display: none
+  +transition
+  top: -100%
+  position: fixed
+  left: 0
+  right: 0
+  padding: 80px 32px
+  z-index: 999999
+  background: $bg
+  border-bottom-right-radius: 18px
+  border-bottom-left-radius: 18px
+  &__backdrop
+    // +transition
+    display: none
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    height: 100%
+    background: rgba($bg, .7)
+    z-index: 999998
+  &.active
+    top: 0
+    & + .menu__backdrop
+      display: block
+
+  &__button
+    &--open
+      background: none
+      padding: 20px
+      border: none
+
+    &--close
+      position: absolute
+      top: 25px
+      right: 25px
+      background: none
+      padding: 20px
+      border: none
+
+  &__links
+    text-align: center
+
+    a
+      +glacial
+      display: block
+      font:
+        size: 32px !important
+        weight: bold
+      text-decoration: none
+      color: $fg
+      text-transform: uppercase
+      padding: 20px 0
+
+      &:active
+        border-radius: 8px
+        background: $fg
+        color: $bg
+
+    // > a // current page
+      &.current
+        color: $color-green-200

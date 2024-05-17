@@ -1,0 +1,47 @@
+
+.copyright
+  padding: 30px 80px
+  display: flex
+  justify-content: space-between
+  background-color: $color-primary-2
+
+  &__colophon
+    display: flex
+    flex-direction: column
+    a
+      // padding:18px 0
+      // padding-top: 24px
+      display: inline-block
+      text-decoration: none
+      color: #fff
+      font-weight: 400
+      transition: 400ms ease-in
+      opacity: .8
+      padding: 3px 0
+      // margin: 10px
+      svg
+        transition: 800ms ease-in
+        // width: 0
+        opacity: 0
+      &:hover
+        opacity: .5
+        svg
+          // width: auto
+          opacity: 1
+
+  &__social
+    display: flex
+    a
+      display: flex
+      justify-content: center
+      align-items: center
+      padding: 7.5px
+      width: 45px
+      height: 45px
+      margin: 10px
+      &:hover
+        background: rgba(255, 255, 255, .1)
+
+@media only screen and (max-width: 768px)
+  .copyright
+    padding: 16px

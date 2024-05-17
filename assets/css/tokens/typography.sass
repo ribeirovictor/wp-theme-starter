@@ -1,0 +1,68 @@
+
+@font-face
+  font-family: "Bebas Neue"
+  src: url('assets/fonts/BebasNeue/regular.woff2') format('woff2')
+
+@font-face
+  font-family: "Glacial Indifference"
+  font-weight: regular
+  src: url('assets/fonts/GlacialIndifference/regular.woff2') format('woff2')
+@font-face
+  font-family: "Glacial Indifference"
+  font-weight: bold
+  src: url('assets/fonts/GlacialIndifference/bold.woff2') format('woff2')
+@font-face
+  font-family: "Glacial Indifference"
+  font-weight: normal
+  font-style: italic
+  src: url('assets/fonts/GlacialIndifference/italic.woff2') format('woff2')
+
+@font-face
+  font-family: "Lato"
+  font-weight: regular
+  src: url('assets/fonts/Lato/regular.woff2') format('woff2')
+@font-face
+  font-family: "Lato"
+  font-weight: bold
+  src: url('assets/fonts/Lato/bold.woff2') format('woff2')
+@font-face
+  font-family: "Lato"
+  font-weight: normal
+  font-style: italic
+  src: url('assets/fonts/Lato/italic.woff2') format('woff2')
+@font-face
+  font-family: "Lato"
+  font-weight: bold
+  font-style: italic
+  src: url('assets/fonts/Lato/bold-italic.woff2') format('woff2')
+
+@mixin bebas
+  font-family: "Bebas Neue", sans-serif !important
+@mixin glacial
+  font-family: "Glacial Indifference", sans-serif !important
+@mixin lato
+  font-family: "Lato", sans-serif !important
+
+$base-font-size: 16px
+$heading-scale: 8
+
+// @function headings($from:1, $to:6)
+//   @if $from == $to
+//     @return 'h#{$from}'
+//   @else
+//     @return 'h#{$from},' + headings($from+1, $to)
+// #{headings(1,6)}
+
+@for $i from 1 through 6
+  h#{$i}
+    +glacial
+    font-weight: bold
+    font-size: $base-font-size + $heading-scale * (6 - $i)
+    line-height: 120%
+
+p
+  font-size: $base-font-size
+  line-height: 1.5
+
+body
+  +glacial
